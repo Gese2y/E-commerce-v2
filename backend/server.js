@@ -9,8 +9,8 @@ import connectDB from './config/db.js';
 import productRoute from './routes/productRoutes.js';
 import userRoute from './routes/userRoutes.js';
 import orderRoute from './routes/orderRoutes.js';
-
-
+import uploadRoutes from './routes/uploadRoutes.js'
+import path from 'path'
 const port = process.env.PORT;
 
 connectDB();
@@ -30,9 +30,13 @@ app.get('/',(req,res)=>{
 app.use('/api/products', productRoute);
 app.use('/api/users', userRoute);
 app.use('/api/orders', orderRoute);
+app.use('/api/upload', uploadRoutes);
 
 app.get('/api/config/paypal',(req,res)=>
 res.send({clientId: process.env.PAYPAL_CLIENT_ID}))
+
+const __dirname = path.resolve();
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 app.use(notFound);
 app.use(errorHandler);
