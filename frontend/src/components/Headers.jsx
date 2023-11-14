@@ -34,7 +34,7 @@ try {
           <LinkContainer to='/'>
             <Navbar.Brand>
               <img src={logo} width="50" height="50" alt='E-shopping' />
-              E-shopping
+              E-Commerce
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
