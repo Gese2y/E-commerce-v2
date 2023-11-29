@@ -21,6 +21,9 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import {addToCart} from '../slices/cartSlice.js'
 import {v4 as uuidv4} from 'uuid';
+import Meta from "../components/Meta.jsx";
+
+
 const ProductScreen = () => {
 
     const { id: productId } = useParams();
@@ -34,7 +37,7 @@ const [comment, setComment] = useState('');
 
 const {userInfo} = useSelector((state) => state.auth);
 
-const [createReview, {isLoading: loadingProductReview,error: reviewError}] = useCreateReviewMutation();
+const [createReview, {isLoading: loadingProductReview}] = useCreateReviewMutation();
 
    
 const addToCartHandler=()=>
@@ -73,12 +76,13 @@ navigate('/cart');
             {isLoading ? (
 
                 <Loader />
-            ) : error ? (
+            ) : error ? ( 
                 <Message variant='danger'>
                     {error?.data?.message || error.error}
                 </Message>
             ) : (
                 <>
+                <Meta title={product.name} />
                 <Row>
                     <Col md={5}>
                         <Image src={product.image} alt={product.name} fluid />
@@ -144,7 +148,7 @@ navigate('/cart');
                                     <Button
                                         className='btn-block'
                                         type='button'
-                                        disabled={product.countIntock == 0}
+                                        disabled={product.countInStock === 0}
                                         onClick={addToCartHandler}
                                         > Add to stock</Button>
                                 </ListGroup.Item>

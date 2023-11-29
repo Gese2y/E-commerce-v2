@@ -1,7 +1,7 @@
 import { LinkContainer} from 'react-router-bootstrap';
 import {Table, Button} from 'react-bootstrap';
 import {FaTimes, FaTrash,FaEdit,FaCheck} from 'react-icons/fa';
-import Massage from '../../components/Message';
+// import Massage from '../../components/Message';
 import Loader from '../../components/Loader';
 import { useDeleteUserMutation, useGetUsersQuery } from '../../slices/usersApiSlice';
 import Message from '../../components/Message';

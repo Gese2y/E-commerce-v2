@@ -1,11 +1,11 @@
 import { LinkContainer} from 'react-router-bootstrap';
 import {Table, Button, Row, Col} from 'react-bootstrap';
-import {FaTimes, FaEdit, FaTrash} from 'react-icons/fa';
+import { FaEdit, FaTrash} from 'react-icons/fa';
 import Massage from '../../components/Message';
 import Loader from '../../components/Loader';
-import {useGetOrdersQuery} from '../../slices/orderdApiSlice';
+// import {useGetOrdersQuery} from '../../slices/orderdApiSlice';
 import { useCreateProductMutation, useDeleteProductMutation, useGetProductsQuery } from '../../slices/productApiSlices';
-import Message from '../../components/Message';
+// import Message from '../../components/Message';
 import {toast} from 'react-toastify'
 import { useParams } from 'react-router-dom';
 import Paginate from '../../components/Paginate';

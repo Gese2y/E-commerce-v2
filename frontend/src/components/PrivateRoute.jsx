@@ -1,5 +1,5 @@
 import { Outlet, Navigate } from "react-router-dom"
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector"
+import {  useSelector } from "react-redux/es/hooks/useSelector"
 
 const PrivateRoute = () => {
     const {userInfo}=useSelector(state=>state.auth)

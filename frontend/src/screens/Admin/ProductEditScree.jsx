@@ -8,7 +8,7 @@ import { useUpdateProductMutation,
 useGetProductDetailsQuery,
 useUploadProductImageMutation } from "../../slices/productApiSlices";
 import {toast} from 'react-toastify';
-import { LinkContainer } from "react-router-bootstrap";
+// import { LinkContainer } from "react-router-bootstrap";
 
 
 const ProductEditScree = () => {
@@ -16,7 +16,7 @@ const {id:productId} = useParams();
 
 const [name,setName]=useState('');
 const [price, setPrice]= useState('');
-const [user, setUser] =useState('');
+// const [user, setUser] =useState('');
 const [image, setImage] = useState('');
 const [brand, setBrand] = useState(''); 
 const [category, setCategory] = useState('');
